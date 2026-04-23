@@ -56,8 +56,7 @@ exec zsh
 
 Paste this into your Claude Code / Cursor / Aider / Codex session:
 
-> Clone `https://github.com/<YOU>/tmux-copy-last-command` into
-> `~/repos/`, run `./install.sh`, then verify: open a new shell
+> Clone this repo, run `./install.sh`, then verify: open a new shell
 > inside tmux, run `echo hello`, press `prefix + y`, and confirm
 > the system clipboard contains the `echo hello` command line
 > plus its `hello` output. Then test `prefix + Y` — the
