@@ -56,15 +56,9 @@ exec zsh
 
 Paste this into your Claude Code / Cursor / Aider / Codex session:
 
-> Clone this repo, run `./install.sh`, then verify: open a new shell
-> inside tmux, run `echo hello`, press `prefix + y`, and confirm
-> the system clipboard contains the `echo hello` command line
-> plus its `hello` output. Then test `prefix + Y` — the
-> clipboard should contain only `hello`. If either fails,
-> check whether the OSC 133 block landed in `~/.zshrc`, whether
-> the outer terminal honors OSC 52, and whether `$TERM` exposes
-> the `Ms` terminfo capability. Report back on anything that
-> misbehaves.
+```
+Clone this repo, run `./install.sh`, then instruct to restart the terminal emulator and tmux
+```
 
 ## Usage
 
