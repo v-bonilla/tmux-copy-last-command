@@ -7,8 +7,8 @@ set -eu
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 TMUX_CONF="${TMUX_CONF:-$HOME/.tmux.conf}"
-MARKER='# >>> copy-last-output >>>'
-END_MARKER='# <<< copy-last-output <<<'
+MARKER='# >>> copy-last-command >>>'
+END_MARKER='# <<< copy-last-command <<<'
 
 # 1. zsh half: OSC 133 prompt markers
 sh "$REPO_DIR/scripts/install-osc133.sh"
@@ -34,4 +34,4 @@ echo
 echo "Reload tmux: tmux source-file $TMUX_CONF   (or detach/attach)"
 echo "Reload zsh:  exec zsh"
 echo
-echo "Test: run 'echo hello', press prefix+Y, paste — clipboard should be 'hello'."
+echo "Test: run 'echo hello', press prefix+y, paste — clipboard should be 'echo hello' + 'hello'."

@@ -1,8 +1,8 @@
-# tmux-copy-last-output
+# tmux-copy-last-command
 
-Two tmux keybinds that copy your last shell command and/or its output
-to the system clipboard, semantically (not via scrollback regexes).
-Zero mouse. Portable across zsh themes and across terminals.
+Two tmux keybinds that copy your last shell command (and/or its
+output) to the system clipboard, semantically — not via scrollback
+regexes. Zero mouse. Portable across zsh themes and across terminals.
 
 - `prefix + y` → last command line **and** its output
 - `prefix + Y` → last command's output only
@@ -42,7 +42,7 @@ The installer:
 
 1. Appends an OSC 133 hook block to `~/.zshrc` (via `scripts/install-osc133.sh`).
 2. Appends the tmux binds to `~/.tmux.conf`, fenced by
-   `# >>> copy-last-output >>>` markers for clean removal.
+   `# >>> copy-last-command >>>` markers for clean removal.
 
 Both steps are idempotent and leave `.bak` files next to anything they
 touch. To activate without opening new shells:
@@ -56,15 +56,16 @@ exec zsh
 
 Paste this into your Claude Code / Cursor / Aider / Codex session:
 
-> Clone `https://github.com/<YOU>/tmux-copy-last-output` into
+> Clone `https://github.com/<YOU>/tmux-copy-last-command` into
 > `~/repos/`, run `./install.sh`, then verify: open a new shell
-> inside tmux, run `echo hello`, press `prefix + Y`, and confirm
-> the system clipboard contains exactly `hello`. Then test
-> `prefix + y` — the clipboard should contain the command line
-> plus its output. If either fails, check whether the OSC 133
-> block landed in `~/.zshrc`, whether the outer terminal honors
-> OSC 52, and whether `$TERM` exposes the `Ms` terminfo
-> capability. Report back on anything that misbehaves.
+> inside tmux, run `echo hello`, press `prefix + y`, and confirm
+> the system clipboard contains the `echo hello` command line
+> plus its `hello` output. Then test `prefix + Y` — the
+> clipboard should contain only `hello`. If either fails,
+> check whether the OSC 133 block landed in `~/.zshrc`, whether
+> the outer terminal honors OSC 52, and whether `$TERM` exposes
+> the `Ms` terminfo capability. Report back on anything that
+> misbehaves.
 
 ## Usage
 
@@ -101,7 +102,7 @@ your prompt height.
 
 ## Uninstall
 
-Remove the fenced block between `# >>> copy-last-output >>>` and
-`# <<< copy-last-output <<<` from `~/.tmux.conf`, and the
+Remove the fenced block between `# >>> copy-last-command >>>` and
+`# <<< copy-last-command <<<` from `~/.tmux.conf`, and the
 `_osc133_decorate_prompt` block from `~/.zshrc`. `.bak` files from
 the installer sit next to the originals.
