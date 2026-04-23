@@ -57,7 +57,7 @@ exec zsh
 Paste this into your Claude Code / Cursor / Aider / Codex session:
 
 ```
-Clone this repo, run `./install.sh`, then instruct to restart the terminal emulator and tmux
+Clone https://github.com/v-bonilla/tmux-copy-last-command.git and run `./install.sh`. Then instruct to restart the terminal emulator and tmux
 ```
 
 ## Usage
